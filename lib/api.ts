@@ -46,7 +46,7 @@ export async function verifyLicense(licenseKey: string): Promise<{ success: bool
     }
 
     return await res.json();
-  } catch (error) {
+  } catch {
     return { success: false, message: "Erro de rede ao validar licença." };
   }
 }

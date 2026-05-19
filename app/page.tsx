@@ -8,7 +8,7 @@ import TextInput from "@/components/TextInput";
 import PlatformSelector from "@/components/PlatformSelector";
 import OutputTabs from "@/components/OutputTabs";
 import DashboardShell from "@/components/DashboardShell";
-import { Zap, Send, FileText, Settings as SettingsIcon, CheckCircle, Info } from "lucide-react";
+import { Zap, Send, FileText, Settings as SettingsIcon, Info } from "lucide-react";
 
 export default function Home() {
   const router = useRouter();
@@ -63,7 +63,7 @@ export default function Home() {
     }
   }
 
-  function loadHistoryItem(item: any) {
+  function loadHistoryItem(item: { originalText: string; platforms: Platform[]; results: ReformatResponse }) {
     setText(item.originalText);
     setPlatforms(item.platforms);
     setResults(item.results);
